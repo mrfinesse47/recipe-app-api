@@ -1,0 +1,21 @@
+version: "3.9"
+# version of docker compose syntax
+
+services:
+  app:
+    build:
+      context: . 
+      # says we want to build in current dir
+      args:
+        - DEV=true
+    ports:
+      - "8000:8000"
+      # maps port 8000 local to 8000 in docker container
+    volumes:
+      - ./app:/app
+      # maps app dir on our system to app to inside container
+      # this syncs code changes locally to container
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
+    
+# now to run this we go: docker-compose build

@@ -1,2 +1,2 @@
-Django>=3.2.4,<3.3
+Django>=3.2.4,<3.3 # this ensures we get the latest patch version, but not the next release, this prevents breaking changes , but will have the latest patch
 djangorestframework>=3.12.4,<3.13
